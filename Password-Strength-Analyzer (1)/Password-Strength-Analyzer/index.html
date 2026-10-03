@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background">
+    <div class="card">
+      <div class="header">
+        <div class="shield">🛡️</div>
+        <div>
+          <h1>Password Strength Analyzer</h1>
+          <p>Check your password security instantly</p>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <label for="password">Enter Password</label>
+        <div class="password-box">
+          <input id="password" type="password" placeholder="Type your password..." autocomplete="off">
+          <button id="toggleBtn" class="icon-btn" type="button" aria-label="Show password">👁️</button>
+        </div>
+
+        <div class="strength-row">
+          <div class="meter"><span id="meterFill"></span></div>
+          <span id="strengthText">No password</span>
+        </div>
+      </div>
+
+      <div class="score-box">
+        <div class="score-circle" id="scoreCircle">
+          <span id="score">0</span>
+          <small>/100</small>
+        </div>
+        <div>
+          <h2 id="statusTitle">Start typing</h2>
+          <p id="statusText">Your password will be analyzed locally in your browser.</p>
+        </div>
+      </div>
+
+      <div class="checks">
+        <h3>Security Checklist</h3>
+        <div class="check-grid">
+          <div class="check-item" id="lengthCheck"><span>○</span> At least 12 characters</div>
+          <div class="check-item" id="upperCheck"><span>○</span> Uppercase letter</div>
+          <div class="check-item" id="lowerCheck"><span>○</span> Lowercase letter</div>
+          <div class="check-item" id="numberCheck"><span>○</span> Number</div>
+          <div class="check-item" id="specialCheck"><span>○</span> Special character</div>
+          <div class="check-item" id="commonCheck"><span>○</span> Avoid common patterns</div>
+        </div>
+      </div>
+
+      <div class="suggestion" id="suggestionBox">
+        <h3>💡 Suggestions</h3>
+        <ul id="suggestions">
+          <li>Use a long, unique passphrase.</li>
+          <li>Avoid names, birthdays, and predictable patterns.</li>
+          <li>Never reuse an important password across sites.</li>
+        </ul>
+      </div>
+
+      <div class="generator">
+        <div>
+          <h3>🔐 Strong Password Generator</h3>
+          <p>Generate a random password for testing or account setup.</p>
+        </div>
+        <button id="generateBtn" type="button">Generate</button>
+      </div>
+
+      <div class="privacy">
+        <strong>🔒 Privacy:</strong> This demo analyzes the password in your browser.
+        It does not send the entered password to a server.
+      </div>
+
+      <footer>
+        <span>Password Security Project</span>
+        <span>HTML • CSS • JavaScript</span>
+      </footer>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

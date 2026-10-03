@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  color: #172033;
+}
+
+.background {
+  min-height: 100vh;
+  padding: 35px 18px;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(124, 58, 237, .20), transparent 30%),
+    radial-gradient(circle at 85% 85%, rgba(14, 165, 233, .18), transparent 30%),
+    linear-gradient(135deg, #eef2ff, #f8fafc 55%, #e0f2fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: min(820px, 100%);
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 28px;
+  padding: 34px;
+  box-shadow: 0 25px 70px rgba(30, 41, 59, .15);
+  backdrop-filter: blur(12px);
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.shield {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 31px;
+  background: #ede9fe;
+}
+
+h1 {
+  font-size: clamp(25px, 4vw, 36px);
+  margin-bottom: 5px;
+}
+
+.header p, .generator p {
+  color: #64748b;
+}
+
+.input-area label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+
+.password-box {
+  display: flex;
+  border: 2px solid #dbe3ef;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  transition: .2s;
+}
+
+.password-box:focus-within {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124,58,237,.10);
+}
+
+.password-box input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  padding: 16px;
+  font-size: 17px;
+}
+
+.icon-btn {
+  width: 55px;
+  border: 0;
+  background: white;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.strength-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.meter {
+  flex: 1;
+  height: 9px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.meter span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  transition: width .3s ease;
+  background: #94a3b8;
+}
+
+#strengthText {
+  min-width: 82px;
+  text-align: right;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.score-box {
+  margin-top: 25px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  background: #f8fafc;
+}
+
+.score-circle {
+  width: 96px;
+  height: 96px;
+  flex: 0 0 96px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e2e8f0;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.score-circle small {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 17px;
+  margin-left: 2px;
+}
+
+.score-box h2 {
+  margin-bottom: 5px;
+}
+
+.score-box p {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.checks, .suggestion, .generator {
+  margin-top: 25px;
+}
+
+h3 {
+  margin-bottom: 13px;
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.check-item {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.check-item span {
+  margin-right: 6px;
+  font-weight: 800;
+}
+
+.check-item.good {
+  color: #166534;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.suggestion {
+  padding: 20px;
+  border-radius: 18px;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+}
+
+.suggestion ul {
+  padding-left: 20px;
+  color: #4c1d95;
+  line-height: 1.7;
+}
+
+.generator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.generator h3 {
+  margin-bottom: 5px;
+}
+
+.generator button {
+  border: 0;
+  border-radius: 12px;
+  padding: 13px 20px;
+  background: #4f46e5;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.generator button:hover {
+  transform: translateY(-1px);
+  background: #4338ca;
+}
+
+.privacy {
+  margin-top: 20px;
+  padding: 13px 15px;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 25px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .score-box {
+    align-items: flex-start;
+  }
+
+  .generator {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .generator button {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
